@@ -1,4 +1,4 @@
-baseURL = "https://example.com"
+baseURL = "https://patrickhousley.github.io/prometheus/"
 title = "Patrick Housley"
 DefaultContentLanguage = "en"
 theme = "hello-friend-ng"
