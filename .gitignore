@@ -1,0 +1,6 @@
+# generated files by hugo
+/public/
+/resources/
+
+# modules for local dev
+node_modules
