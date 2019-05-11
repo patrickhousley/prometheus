@@ -11,8 +11,29 @@ jobs:
             git submodule init
             git submodule update --remote
       - run:
+          name: 'Prep gh-pages'
+          command: |
+            git worktree add public gh-pages
+      - run:
           name: "Run Hugo"
           command: HUGO_ENV=production hugo
       - run:
           name: "Test Website"
           command: htmlproofer public --allow-hash-href --check-html --empty-alt-ignore --disable-external
+      - run:
+          name: "Deploy gh-pages"
+          command: |
+            cd public
+            git config --global user.email "patrick.f.housley@gmail.com"
+            git config --global user.name "CircleCI Bot"
+            git add -A
+            git commit -m "Publishing to gh-pages"
+            git push --force
+workflows:
+  version: 2
+  build-master:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
