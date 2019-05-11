@@ -1,0 +1,17 @@
+{
+  "name": "prometheus",
+  "version": "1.0.0",
+  "description": "Personal site",
+  "main": "index.js",
+  "scripts": {
+    "hugo": "env-cmd hugo",
+    "start": "env-cmd hugo server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "env-cmd": "^9.0.1",
+    "hugo-cli": "^0.10.0"
+  }
+}
