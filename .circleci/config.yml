@@ -12,7 +12,7 @@ jobs:
             git submodule update --remote
       - run:
           name: "Run Hugo"
-          command: HUGO_ENV=production hugo -v -s src/
+          command: HUGO_ENV=production hugo
       - run:
           name: "Test Website"
           command: htmlproofer src/public --allow-hash-href --check-html --empty-alt-ignore --disable-external
